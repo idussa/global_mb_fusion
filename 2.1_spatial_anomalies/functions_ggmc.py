@@ -27,7 +27,7 @@ def create_mb_dataframe(in_df, id_lst, yr_lst, mb_field):
 
 def calc_anomalies(in_df, ref_period, region):
     """This function calculates the anomalies of glacier mass balances over a defined reference period."""
-    print('Calculating anomalies for reference period from {} to {}...'.format(min(ref_period), max(ref_period)))
+    # print('Calculating anomalies for reference period from {} to {}...'.format(min(ref_period), max(ref_period)))
 
     # create subset over reference period
     in_ref_df = in_df.loc[in_df.index.isin(ref_period)]
@@ -48,7 +48,7 @@ def calc_anomalies(in_df, ref_period, region):
     avg_ref_df = good_ids_in_ref_df.mean()
     anomaly_ref_df = round(good_ids_in_df - avg_ref_df, 0)
     # print(anomaly_ref_df)
-    print('done.')
+    # print('done.')
     return anomaly_ref_df
 
 def calc_anomalies_unc(in_df, in_unc_df, ref_period, region):
@@ -66,8 +66,8 @@ def calc_anomalies_unc(in_df, in_unc_df, ref_period, region):
     unc_ref_df = in_unc_df[ref_period_id_lst]
     reg_unc_mean= np.nanmean(unc_ref_df)
 
-    print(unc_ref_df)
-    print(reg_unc_mean)
+    # print(unc_ref_df)
+    # print(reg_unc_mean)
 
     for id in ref_period_id_lst:
         # id=0
@@ -83,7 +83,7 @@ def calc_anomalies_unc(in_df, in_unc_df, ref_period, region):
 
         print(unc_ref_df[id])
         # exit()
-    print('done.')
+    # print('done.')
     return unc_ref_df
 
 def calc_spt_anomalies_unc(in_df, in_unc_df, id_lst):
@@ -104,7 +104,7 @@ def calc_spt_anomalies_unc(in_df, in_unc_df, id_lst):
 
         unc_ref_df[id].mask(unc_ref_df.index.isin(yrs), np.nan, inplace=True)
 
-    print('done.')
+    # print('done.')
     return unc_ref_df
 
 

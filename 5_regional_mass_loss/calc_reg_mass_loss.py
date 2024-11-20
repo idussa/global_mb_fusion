@@ -74,7 +74,6 @@ color = {  'ALA':	'#b9762a',
 ##    Define input datasets
 #################################################################################################
 
-## Define input paths
 path = os.path.dirname(os.path.abspath(__file__))
 path_proj = 'C:\\Users\\idussail2\\Documents\\PROJECTS\\G3P_project\\'
 fog_version = '2024-01'
@@ -149,7 +148,7 @@ Reg_sig_DM_df = pd.DataFrame()
 
 for region in reg_lst:
     print('working in region: ', region)
-    # region='CEU'
+    region='GRL'
     out_DM_series = out_dir +'regional_mass_loss_series\\'
     if not os.path.exists(out_DM_series):
         os.mkdir(out_DM_series)
