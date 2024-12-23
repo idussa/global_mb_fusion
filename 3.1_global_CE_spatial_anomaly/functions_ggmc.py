@@ -128,7 +128,7 @@ def plot_reg_anomalies(in_ba_df_lst, path):
 
     return
 
-def plot_gla_oce(in_cal_series_df, in_geo_df, glacier_id, min_year, max_year, min_lenght_geo, region, run, gla_dir):
+def plot_gla_oce(in_cal_series_df, in_geo_df, glacier_id, distance, max_year, min_lenght_geo, region, run, gla_dir):
     #add in_geo_df to arguments
     """This function plots the anomalies of glacier mass balances over a defined reference period."""
     print('Plotting calibrated series for glacier = {}'.format(glacier_id))
@@ -137,7 +137,7 @@ def plot_gla_oce(in_cal_series_df, in_geo_df, glacier_id, min_year, max_year, mi
     file_type = '.svg'
 
     # define name of figure
-    out_fig = gla_dir + 'Fig1_Cal_'+str(region) +'_'+ run +'_glacier_id_'+str(glacier_id)+'_'+str(min_year)+'_'+str(max_year)+ file_type
+    out_fig = gla_dir + '\\'+str(region) +'_glacier_id_'+str(glacier_id)+ file_type
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -214,7 +214,7 @@ def plot_gla_oce_and_unc(in_cal_series_df, in_oce_df, in_geo_df, in_oce_unc_df, 
     file_type = '.svg'
 
     # define name of figure
-    out_fig = gla_dir + 'Fig2_OCE_glacier_id_'+str(glacier_id)+'_region_'+str(region) + file_type
+    out_fig = gla_dir + '\\Fig2_OCE_glacier_id_'+str(glacier_id)+'_region_'+str(region) + file_type
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
